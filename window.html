@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Shape Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #window {
+            background-color: rgb(172, 221, 247);
+            border: 15px solid rgb(192, 192, 192);
+            margin: 20px auto;
+            /* box-shadow: inset -5px -5px 5px rgba(0, 0, 0, 0.2); */
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <label for="width">Width:</label>
+    <input type="number" id="width" value="100">
+    
+    <label for="height">Height:</label>
+    <input type="number" id="height" value="100">
+    
+    <br><br>
+    
+    <div id="window" style="width: 100px; height: 100px;"></div>
+    
+    <script>
+        function updateWindowSize() {
+            const width = document.getElementById('width').value;
+            const height = document.getElementById('height').value;
+            const windowDiv = document.getElementById('window');
+            windowDiv.style.width = width + 'px';
+            windowDiv.style.height = height + 'px';
+        }
+        
+        document.getElementById('width').addEventListener('input', updateWindowSize);
+        document.getElementById('height').addEventListener('input', updateWindowSize);
+    </script>
+
+</body>
+</html>
